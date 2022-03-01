@@ -1,0 +1,321 @@
+body {
+  background-color: #fff;
+  background-image: url('../img/banner.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+  /* font-family: 'Roboto', sans-serif; */
+
+  font-style: italic;
+  font-size: 20px;
+  color: #fff;
+  
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+
+  position: relative;
+  
+}
+
+.main::before {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 130px;
+  top: 130px;
+  width: 470px;
+  height: 460px;
+  background-image: url('../img/logotype.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  opacity: 0.1;
+}
+
+.main__block {
+  background: linear-gradient(
+    to bottom,
+    rgba(150, 150, 150, 1),
+    rgba(150, 150, 150, 0.3)
+  );
+
+  border-radius: 20px;
+  
+  /* width: 1000px; */
+
+
+  display: flex;
+
+  
+}
+
+.main__sidebar {
+  /* width: 30%; */
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 20px 30px 30px 20px;
+}
+
+.main__sidebar_img {
+}
+
+.main__sidebar_img img {
+  border-radius: 20px 30px 0 0;
+  opacity: 0.95;
+
+}
+
+.main__content {
+  /* width: 70%; */
+}
+
+/* //////////////////////////////////////////////Progress */
+
+.progress_bar {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.step {
+  text-align: center;
+  width: 100%;
+
+  position: relative;
+}
+
+.step__name {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 8px;
+
+  transition: .2s;
+}
+
+.step__name.active {
+  color: #d43f8d;
+}
+
+.bullet {
+  position: relative;
+
+  height: 25px;
+  width: 25px; 
+  border: 2px solid #fff;
+  display: inline-block;
+  border-radius: 50%;
+
+  transition: 0.2s;
+}
+
+.bullet.active {
+  border-color: #ff0;
+  background: #d43f8d;
+}
+
+
+.bullet::before,
+.bullet::after {
+  position: absolute;
+  content: '';
+  bottom: 10px;
+  right: -150px;
+  height: 3px;
+  width: 140px;
+  background-color: #262626;
+}
+
+.step:last-child .bullet::before,
+.step:last-child .bullet::after {
+  display: none;
+}
+
+.bullet.active::after {
+  background-color: rgb(133, 11, 11);
+
+
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate .3s linear forwards;
+}
+
+@keyframes animate {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.bullet__span {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 22px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bullet.active .bullet__span {
+  display: none;
+}
+
+.check {
+  position: absolute;
+  left: 50%;
+  top: 77%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.check::before {
+  display: none;
+}
+
+.check.active.check::before {
+  display: block;
+  /* color: #fff; */
+
+}
+
+
+/* //////////////////////////////////////////////FORM */
+.main__content_inner {
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; */
+
+
+}
+
+.main__content_form {
+  width: 800px;
+  padding: 40px;
+  text-align: center;
+
+
+}
+
+.form__header {
+  font-size: 35px;
+  font-weight: 500;
+
+}
+
+.form__outher {
+  width: 100%;
+  overflow: hidden;
+}
+
+.form {
+  display: flex;
+  width: 400%;
+}
+
+.form__page {
+  width: 25%;
+  transition: margin-left .3s ease-in-out;
+}
+
+.form__title {
+  text-align: left;
+  font-size: 25px;
+}
+
+.form__field {
+  height: 50px;
+  width: 800px;
+  margin: 45px 0;
+
+  position: relative;
+  display: flex;
+}
+
+.form__label {
+  position: absolute;
+  top: -30px;
+  font-weight: 600;
+}
+
+.form__select {
+  width: 90%;
+  padding-left: 15px;
+  font-size: 17px;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+
+  border-bottom: 1px solid #ccc;
+
+}
+
+.form__select_option {
+
+}
+
+
+.form__input {
+  height: 100%;
+  width: 90%;
+  border: none;
+  font-size: 18px;
+  padding-left: 15px;
+  background-color: #ccc;
+
+  border-bottom: 1px solid #ccc;
+}
+
+.form__input:focus {
+  border-color: rgb(95, 93, 93);
+}
+
+.btn {
+  width: 90%;
+  height: calc(100% + 5px);
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+}
+
+.btn:hover {
+  border-color: #000;
+}
+
+.btns button {
+
+}
+
+.prev {
+  /* margin-right: 3px; */
+  width: 45%;
+  font-size: 17px;
+}
+
+.next {
+  /* margin-left: 3px; */
+  width: 45%;
+}
+
+.submit {
+  width: 45%;
+}
